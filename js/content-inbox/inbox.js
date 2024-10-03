@@ -1,20 +1,20 @@
 (function($){
     
     rir.templates.add({
-        inbox_layout: chrome.extension.getURL('template/inbox_layout.html'),
-        inbox_message_row: chrome.extension.getURL('template/inbox_message_row.html'),
-        contact_row: chrome.extension.getURL('template/contact_row.html'),
-        conversation: chrome.extension.getURL('template/conversation.html'),
-        conversation_reverse: chrome.extension.getURL('template/conversation_reverse.html'),
-        private_message: chrome.extension.getURL('template/private_message.html'),
-        load_more_messages: chrome.extension.getURL('template/load_more_messages.html'),
-        load_more_contacts: chrome.extension.getURL('template/load_more_contacts.html'),
-        config: chrome.extension.getURL('template/config.html'),
-        export_all_window: chrome.extension.getURL('template/export_all_window.html'),
-        export_all_to_mysql: chrome.extension.getURL('template/export_all_to_mysql.html'),
-        export_all_to_html: chrome.extension.getURL('template/export_all_to_html.html'),
-        export_conversation_window: chrome.extension.getURL('template/export_conversation_window.html'),
-        export_conversation_to_html: chrome.extension.getURL('template/export_conversation_to_html.html')
+        inbox_layout: chrome.runtime.getURL('template/inbox_layout.html'),
+        inbox_message_row: chrome.runtime.getURL('template/inbox_message_row.html'),
+        contact_row: chrome.runtime.getURL('template/contact_row.html'),
+        conversation: chrome.runtime.getURL('template/conversation.html'),
+        conversation_reverse: chrome.runtime.getURL('template/conversation_reverse.html'),
+        private_message: chrome.runtime.getURL('template/private_message.html'),
+        load_more_messages: chrome.runtime.getURL('template/load_more_messages.html'),
+        load_more_contacts: chrome.runtime.getURL('template/load_more_contacts.html'),
+        config: chrome.runtime.getURL('template/config.html'),
+        export_all_window: chrome.runtime.getURL('template/export_all_window.html'),
+        export_all_to_mysql: chrome.runtime.getURL('template/export_all_to_mysql.html'),
+        export_all_to_html: chrome.runtime.getURL('template/export_all_to_html.html'),
+        export_conversation_window: chrome.runtime.getURL('template/export_conversation_window.html'),
+        export_conversation_to_html: chrome.runtime.getURL('template/export_conversation_to_html.html')
     });
 
     rir.init.funcs.push(rir.functions.DOMReady);
@@ -230,7 +230,7 @@
             var link = document.createElement('link');
             link.type = 'image/png';
             link.rel = 'shortcut icon';
-            link.href = chrome.extension.getURL('Icons/' + icon);
+            link.href = chrome.runtime.getURL('Icons/' + icon);
             document.querySelector('head').appendChild(link);
         },
         update: function(){

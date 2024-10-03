@@ -1,5 +1,5 @@
 rir.templates.add({
-    commenttools_link: chrome.extension.getURL('template/commenttools_link.html')
+    commenttools_link: chrome.runtime.getURL('template/commenttools_link.html')
 });
 
 rir.commentTools = {

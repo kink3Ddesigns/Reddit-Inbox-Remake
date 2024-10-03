@@ -34,7 +34,7 @@
         if(request.action && request.action === 'proxyCmd') {
             logRequest(request, sender);
             
-            var func = window;
+            var func = self;
             for(var i = 0; i < request.path.length; i++) {
                 var key = request.path[i];
                 func = func[key];
