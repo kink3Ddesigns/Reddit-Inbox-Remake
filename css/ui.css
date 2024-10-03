@@ -1,0 +1,746 @@
+#header span.pagename.selected:before {
+  color: #000;
+  content: 'Revamped Inbox'; }
+#header span.pagename.selected {
+  color: transparent;
+  width: 115px;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap; }
+
+body > #header {
+  position: fixed;
+  width: 100%;
+  top: 0; }
+
+body.rir-show-inbox .rir-left-panel .rir-link.rir-inbox:before,
+body.rir-show-saved .rir-left-panel .rir-link.rir-saved:before,
+body.rir-show-deleted .rir-left-panel .rir-link.rir-deleted:before {
+  position: absolute;
+  left: -10px;
+  width: 5px;
+  top: 0;
+  height: 100%;
+  display: block;
+  background-color: #F70;
+  content: ''; }
+
+.rir-content input[type="checkbox"], .rir-checkbox input[type="checkbox"] {
+  display: none; }
+.rir-content input[type="checkbox"] + label, .rir-checkbox input[type="checkbox"] + label {
+  position: relative;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border: solid #BBB 1px;
+  vertical-align: text-bottom;
+  overflow: visible;
+  white-space: nowrap;
+  text-indent: 24px;
+  line-height: 16px; }
+  .rir-content input[type="checkbox"] + label:empty, .rir-checkbox input[type="checkbox"] + label:empty {
+    text-indent: 0; }
+    .rir-content input[type="checkbox"] + label:empty:before, .rir-checkbox input[type="checkbox"] + label:empty:before {
+      margin-left: -5px !important; }
+.rir-content input[type="checkbox"] + label:before, .rir-checkbox input[type="checkbox"] + label:before {
+  position: absolute;
+  content: '';
+  transform-origin: 0px 0px;
+  transform: rotate(-40deg);
+  border: solid transparent 0px;
+  border-left: solid #666 3px;
+  border-bottom: solid #666 2px;
+  margin-top: 7px;
+  margin-left: -22px;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  transition: opacity ease-out 0.3s 0s, width linear 0.1s 0.3s, height linear 0.1s 0.3s; }
+.rir-content input[type="checkbox"]:checked + label:before, .rir-checkbox input[type="checkbox"]:checked + label:before {
+  width: 15px;
+  height: 7px;
+  opacity: 1;
+  transition: opacity ease-in 0.1s 0s, height linear 0.1s 0s, width linear 0.1s 0.15s; }
+
+.rir-content.rir-extra-colors .rir-last-author.rir-last-received:before {
+  -webkit-filter: sepia(100%) saturate(3) brightness(0.9); }
+
+body > div.content {
+  padding: 0;
+  margin: 0;
+  margin-top: 115px; }
+  body > div.content > .menuarea, body > div.content > #siteTable, body > div.content > #progressIndicator, body > div.content > form, body > div.content > #classy-error {
+    display: none; }
+  body > div.content .rir-content div {
+    box-sizing: border-box; }
+  body > div.content .rir-content .clear-after:after {
+    display: block;
+    content: '';
+    clear: both; }
+  body > div.content .rir-content .rir-top-panel {
+    position: fixed;
+    top: 65px;
+    width: 100%;
+    background-color: #E5E5E5;
+    border-bottom: solid #CCC 1px;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    z-index: 98; }
+    body > div.content .rir-content .rir-top-panel .rir-message-types {
+      float: left;
+      width: 200px;
+      height: 50px; }
+    body > div.content .rir-content .rir-top-panel .rir-search-panel {
+      position: absolute;
+      left: 210px;
+      right: 415px;
+      overflow: visible; }
+      body > div.content .rir-content .rir-top-panel .rir-search-panel input {
+        box-sizing: border-box;
+        height: 28px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border: solid gray 1px;
+        border-right-style: none;
+        width: 100%;
+        padding-left: 10px; }
+      body > div.content .rir-content .rir-top-panel .rir-search-panel button {
+        box-sizing: border-box;
+        position: absolute;
+        height: 28px;
+        top: 50%;
+        margin-top: -14px;
+        left: 100%;
+        background: -webkit-linear-gradient(top, #4387fd, #4683ea);
+        color: #FFF;
+        border: solid transparent 1px;
+        border-radius: 0px;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+        cursor: default;
+        padding-left: 10px;
+        padding-right: 10px; }
+    body > div.content .rir-content .rir-top-panel .rir-buttons-panel {
+      float: right;
+      height: 50px; }
+      body > div.content .rir-content .rir-top-panel .rir-buttons-panel .rir-left-button {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0; }
+      body > div.content .rir-content .rir-top-panel .rir-buttons-panel .rir-right-button {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        margin-left: -5px; }
+      body > div.content .rir-content .rir-top-panel .rir-buttons-panel .rir-config-button {
+        padding-top: 3px;
+        padding-bottom: 0;
+        vertical-align: middle;
+        margin-top: -2px; }
+      body > div.content .rir-content .rir-top-panel .rir-buttons-panel button {
+        border: solid #ccc 1px;
+        background-color: #F4F4F4;
+        border-radius: 3px;
+        border-bottom-width: 2px;
+        border-bottom-color: #BBB;
+        padding: 5px 10px;
+        margin-left: 3px;
+        color: #555;
+        transition: all ease-in-out 0.15s;
+        cursor: pointer; }
+        body > div.content .rir-content .rir-top-panel .rir-buttons-panel button:hover {
+          background-color: FFF;
+          border-bottom-color: #89A;
+          color: #000; }
+  body > div.content .rir-content .rir-content-panels {
+    font-family: Arial;
+    z-index: 5; }
+    body > div.content .rir-content .rir-content-panels .rir-left-panel {
+      float: left;
+      width: 200px;
+      min-height: 100px;
+      padding: 15px; }
+      body > div.content .rir-content .rir-content-panels .rir-left-panel > a {
+        position: relative;
+        display: block;
+        color: #333;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 2.3em;
+        padding-left: 10px;
+        margin-left: -5px;
+        transition: background-color linear 0.1s; }
+        body > div.content .rir-content .rir-content-panels .rir-left-panel > a:hover {
+          background-color: #F6F6F6;
+          color: #000; }
+      body > div.content .rir-content .rir-content-panels .rir-left-panel .rir-contacts h2 {
+        margin-top: 15px;
+        font-size: 16px;
+        color: #999;
+        border-bottom: solid #CCC 1px;
+        padding-left: 5px;
+        margin-left: -5px;
+        margin-bottom: 5px; }
+      body > div.content .rir-content .rir-content-panels .rir-left-panel .rir-contacts .rir-contact {
+        height: 24px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        padding-left: 6px;
+        line-height: 16px;
+        font-size: 12px;
+        position: relative;
+        cursor: default; }
+        body > div.content .rir-content .rir-content-panels .rir-left-panel .rir-contacts .rir-contact:hover {
+          background-color: #F6F6F6; }
+          body > div.content .rir-content .rir-content-panels .rir-left-panel .rir-contacts .rir-contact:hover .rir-contact-buttons a {
+            opacity: 1; }
+        body > div.content .rir-content .rir-content-panels .rir-left-panel .rir-contacts .rir-contact .rir-contact-name {
+          display: inline-block;
+          width: 95px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          cursor: default;
+          color: #000; }
+        body > div.content .rir-content .rir-content-panels .rir-left-panel .rir-contacts .rir-contact .rir-contact-buttons {
+          position: absolute;
+          top: 4px;
+          right: 4px; }
+          body > div.content .rir-content .rir-content-panels .rir-left-panel .rir-contacts .rir-contact .rir-contact-buttons .rir-view-profile {
+            background-position-x: 0px; }
+          body > div.content .rir-content .rir-content-panels .rir-left-panel .rir-contacts .rir-contact .rir-contact-buttons .rir-send-message {
+            background-position-x: -16px; }
+          body > div.content .rir-content .rir-content-panels .rir-left-panel .rir-contacts .rir-contact .rir-contact-buttons .rir-show-messages {
+            background-position-x: -32px; }
+          body > div.content .rir-content .rir-content-panels .rir-left-panel .rir-contacts .rir-contact .rir-contact-buttons a {
+            opacity: 0.5;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-image: url("chrome-extension://__MSG_@@extension_id__/images/icons.png");
+            background-repeat: no-repeat;
+            background-position-y: 0px; }
+            body > div.content .rir-content .rir-content-panels .rir-left-panel .rir-contacts .rir-contact .rir-contact-buttons a:hover {
+              background-position-y: -16px; }
+          body > div.content .rir-content .rir-content-panels .rir-left-panel .rir-contacts .rir-contact .rir-contact-buttons a + a {
+            margin-left: 4px; }
+    body > div.content .rir-content .rir-content-panels .rir-main-panel {
+      float: right;
+      width: 1700px;
+      min-height: 100px;
+      margin-left: -30px; }
+      body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row {
+        background-color: #F5F5F5;
+        border-bottom: solid #E5E5E5 1px;
+        cursor: pointer;
+        position: relative; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row div {
+          height: 40px;
+          line-height: 40px;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          font-size: 13px; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row .rir-checkbox {
+          float: left;
+          width: 30px;
+          text-align: center;
+          cursor: default;
+          user-select: none;
+          -webkit-user-select: none;
+          margin-left: 6px; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row .rir-last-author {
+          float: left;
+          width: 30px;
+          text-align: center;
+          cursor: default;
+          user-select: none;
+          -webkit-user-select: none; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row .rir-last-author:before {
+            content: '';
+            position: relative;
+            top: 3px;
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            background-image: url("chrome-extension://__MSG_@@extension_id__/images/icons.png");
+            background-repeat: no-repeat;
+            background-position-x: -155px;
+            background-position-y: -1px; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row .rir-last-author.rir-last-sent:before {
+            background-position-y: -20px; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row .rir-save-toggle {
+          float: left;
+          width: 30px;
+          text-align: center;
+          cursor: default;
+          user-select: none;
+          -webkit-user-select: none;
+          margin-right: 5px; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row .rir-save-toggle:before {
+            content: '';
+            position: relative;
+            top: 3px;
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            background-image: url("chrome-extension://__MSG_@@extension_id__/images/icons.png");
+            background-repeat: no-repeat;
+            background-position-x: -134px;
+            background-position-y: -1px;
+            cursor: pointer;
+            transition: background-position-y ease-in-out 0.5s; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row .rir-save-toggle.rir-saved:before {
+            background-position-y: -20px; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row .rir-correspondent {
+          float: left;
+          width: 180px;
+          color: #000; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row.rir-last-sent .rir-correspondent:before {
+          background-position-y: -2px; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row.rir-last-received .rir-correspondent:before {
+          background-position-y: -18px; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row.rir-has-draft .rir-subject-text:before {
+          content: '(Draft)';
+          color: #C77;
+          padding-right: 0.4em;
+          font-style: italic; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row .rir-subject-text {
+          position: absolute;
+          left: 280px;
+          right: 110px; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row .rir-subject-text .rir-subject {
+            display: inline;
+            max-width: 1000px;
+            overflow: hidden; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row .rir-subject-text .rir-text {
+            display: inline;
+            opacity: 0.7; }
+            body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row .rir-subject-text .rir-text:before {
+              content: ' - '; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row .rir-datetime {
+          float: right;
+          text-align: right;
+          color: #000;
+          width: 150px;
+          padding-right: 15px; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row.rir-unread {
+          background-color: #FFF; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row.rir-unread .rir-correspondent, body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row.rir-unread .rir-subject {
+            font-weight: bold; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-message-row.rir-row-checked {
+          background-color: #fff8dc; }
+      body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation {
+        margin-top: 15px;
+        font-size: 12px;
+        position: relative;
+        max-width: 995px; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation .rir-save-toggle {
+          float: left;
+          width: 30px;
+          text-align: center;
+          cursor: default;
+          user-select: none;
+          -webkit-user-select: none;
+          margin-right: 5px; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation .rir-save-toggle:before {
+            content: '';
+            position: relative;
+            top: 3px;
+            display: inline-block;
+            width: 17px;
+            height: 17px;
+            background-image: url("chrome-extension://__MSG_@@extension_id__/images/icons.png");
+            background-repeat: no-repeat;
+            background-position-x: -134px;
+            background-position-y: -1px;
+            cursor: pointer;
+            margin-top: -2px;
+            transition: background-position-y ease-in-out 0.5s; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation .rir-save-toggle.rir-saved:before {
+            background-position-y: -20px; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > h2.rir-conversation-title {
+          font-size: 18px;
+          font-weight: normal;
+          padding-bottom: 10px;
+          color: #222; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > .rir-conversation-controls {
+          position: absolute;
+          top: 5px;
+          right: 5px; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > .rir-conversation-controls #RirExportConversation {
+            position: relative;
+            top: -2px;
+            right: 5px;
+            border-style: none;
+            background-color: transparent;
+            color: #888;
+            outline-style: none; }
+            body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > .rir-conversation-controls #RirExportConversation:hover {
+              color: #444; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > .rir-conversation-controls button.rir-expand-all-btn {
+            background-color: transparent;
+            background-image: url("chrome-extension://__MSG_@@extension_id__/images/icons.png");
+            background-position-x: -96px;
+            background-position-y: 0px;
+            background-repeat: no-repeat;
+            width: 16px;
+            height: 16px;
+            border-style: none; }
+            body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > .rir-conversation-controls button.rir-expand-all-btn:hover {
+              background-position-y: -16px;
+              outline-style: none; }
+            body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > .rir-conversation-controls button.rir-expand-all-btn:active, body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > .rir-conversation-controls button.rir-expand-all-btn:focus {
+              outline-style: none; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages {
+          border-top: solid #CCC 1px; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message {
+            border-bottom: solid #CCC 1px; }
+            body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message .rir-pm-header {
+              background-color: #FFF;
+              border-bottom: solid #EEE 1px;
+              padding: 10px;
+              cursor: pointer;
+              position: relative; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message .rir-pm-header .rir-title-text {
+                position: absolute;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                left: 10px;
+                right: 110px; }
+                body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message .rir-pm-header .rir-title-text h4 {
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #222;
+                  display: inline; }
+                  body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message .rir-pm-header .rir-title-text h4:hover {
+                    color: #369;
+                    text-decoration: underline; }
+                body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message .rir-pm-header .rir-title-text .rir-pm-body-short {
+                  display: none; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message .rir-pm-header .rir-right {
+                float: right; }
+                body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message .rir-pm-header .rir-right button.rir-expand-collapse-btn {
+                  background-color: transparent;
+                  background-image: url("chrome-extension://__MSG_@@extension_id__/images/icons.png");
+                  background-position-x: -80px;
+                  background-position-y: 0px;
+                  background-repeat: no-repeat;
+                  width: 16px;
+                  height: 16px;
+                  border-style: none;
+                  margin-left: 5px; }
+                  body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message .rir-pm-header .rir-right button.rir-expand-collapse-btn:active, body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message .rir-pm-header .rir-right button.rir-expand-collapse-btn:focus, body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message .rir-pm-header .rir-right button.rir-expand-collapse-btn:hover {
+                    outline-style: none; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message .rir-pm-header:hover button.rir-expand-collapse-btn {
+                background-position-y: -16px; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message .rir-pm-header:after {
+                content: '';
+                display: block;
+                clear: both; }
+            body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message .rir-pm-body {
+              padding: 10px;
+              padding-bottom: 30px; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message .rir-pm-body .md {
+                max-width: 970px; }
+            body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message.rir-collapsed .rir-pm-header {
+              background-color: #F8F8F8;
+              border-bottom: solid #EEE 1px;
+              border-left: solid #EEE 1px;
+              border-right: solid #EEE 1px; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message.rir-collapsed .rir-pm-header .rir-pm-body-short {
+                display: inline;
+                color: #999; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message.rir-collapsed .rir-pm-header .rir-pm-body-short:before {
+                content: ' - '; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message.rir-collapsed .rir-pm-header button.rir-expand-collapse-btn {
+                background-position-x: -64px; }
+            body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-private-messages .rir-private-message.rir-collapsed .rir-pm-body {
+              display: none; }
+        body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response {
+          padding: 10px; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response .rir-comment-tools {
+            float: right; }
+            body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response .rir-comment-tools > button {
+              box-sizing: border-box;
+              border: solid #CCC 1px;
+              background-color: #FFF;
+              background-image: url("chrome-extension://__MSG_@@extension_id__/images/commenttools.png");
+              background-position-x: 7px;
+              background-repeat: no-repeat;
+              width: 32px;
+              height: 21px;
+              display: inline-block;
+              overflow: hidden;
+              text-indent: 50px;
+              margin-left: 4px;
+              transition: all 0.15s ease-in-out; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response .rir-comment-tools > button:hover {
+                background-color: #EEE; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response .rir-comment-tools > button.rir-ct-bold {
+                background-position-y: 2px; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response .rir-comment-tools > button.rir-ct-italic {
+                background-position-y: -18px; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response .rir-comment-tools > button.rir-ct-strike {
+                background-position-y: -38px; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response .rir-comment-tools > button.rir-ct-super {
+                background-position-y: -58px; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response .rir-comment-tools > button.rir-ct-link {
+                background-position-y: -78px; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response .rir-comment-tools > button.rir-ct-quote {
+                background-position-y: -98px; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response .rir-comment-tools > button.rir-ct-code {
+                background-position-y: -118px; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response .rir-comment-tools > button.rir-ct-bullet {
+                background-position-y: -138px; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response .rir-comment-tools > button.rir-ct-number {
+                background-position-y: -158px; }
+              body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response .rir-comment-tools > button.rir-ct-table {
+                background-position-y: -178px; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response > h3 {
+            font-size: 18px;
+            font-weight: normal;
+            padding-bottom: 5px; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response textarea.rir-conversation-input {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            display: block;
+            min-width: 975px;
+            max-width: 975px;
+            height: 100px;
+            margin-bottom: 20px;
+            padding: 10px; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response #RirShowReplyPreview {
+            float: left; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response button.rir-conversation-reply-btn {
+            float: right;
+            height: 28px;
+            background: -webkit-linear-gradient(top, #fafafa, #ebebeb);
+            color: #666;
+            border: 1px solid #CCC;
+            border-radius: 2px;
+            cursor: pointer;
+            width: 100px;
+            margin-top: -6px; }
+            body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response button.rir-conversation-reply-btn:hover {
+              background: -webkit-linear-gradient(top, #fcfcfc, #f0f0f0);
+              color: #777; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response div.rir-conversation-preview {
+            clear: both;
+            display: none;
+            border: solid #BBB 1px;
+            max-width: 975px;
+            margin-top: 20px;
+            padding: 10px; }
+            body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response div.rir-conversation-preview:before {
+              content: 'Preview:';
+              display: block;
+              font-size: 13px;
+              font-weight: bold;
+              padding-bottom: 3px; }
+            body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response div.rir-conversation-preview:empty:after {
+              content: 'No message to preview';
+              color: #999; }
+          body > div.content .rir-content .rir-content-panels .rir-main-panel .rir-conversation > div.rir-conversation-response #RirShowReplyPreview:checked ~ .rir-conversation-preview {
+            display: block; }
+
+body > .rir-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+  transition: all ease-in-out 0.5s;
+  text-align: center;
+  white-space: nowrap;
+  /* Position content vertically centered */
+  /* Loading message CSS */
+  /* Export window CSS */ }
+  body > .rir-overlay:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em; }
+  body > .rir-overlay.show {
+    opacity: 1; }
+  body > .rir-overlay > div {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    text-align: left; }
+  body > .rir-overlay > div.rir-slide-in {
+    margin-top: -50%;
+    transition: none; }
+  body > .rir-overlay.show > div.rir-slide-in {
+    margin-top: 0%;
+    transition: margin-top 0.3s ease-in-out; }
+  body > .rir-overlay > div.loading-message, body > .rir-overlay > div.notification-message {
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #000;
+    color: #FFF; }
+    body > .rir-overlay > div.loading-message .rir-loading-status, body > .rir-overlay > div.notification-message .rir-loading-status {
+      display: block;
+      padding-top: 8px; }
+      body > .rir-overlay > div.loading-message .rir-loading-status:empty, body > .rir-overlay > div.notification-message .rir-loading-status:empty {
+        display: none; }
+  body > .rir-overlay > div.rir-export-window {
+    background-color: #F2F2F2;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 10px; }
+    body > .rir-overlay > div.rir-export-window h2 {
+      color: #000;
+      font-size: 20px;
+      margin-bottom: 10px; }
+    body > .rir-overlay > div.rir-export-window .rir-export-settings {
+      text-align: left;
+      background-color: #FBFBFB;
+      padding: 10px;
+      border: solid #DDD 1px;
+      border-radius: 4px;
+      line-height: 1.8em;
+      margin-bottom: 5px;
+      font-size: 12px;
+      padding-bottom: 7px; }
+      body > .rir-overlay > div.rir-export-window .rir-export-settings label {
+        cursor: pointer;
+        color: #555; }
+        body > .rir-overlay > div.rir-export-window .rir-export-settings label:hover {
+          color: #222; }
+    body > .rir-overlay > div.rir-export-window .rir-export-buttons a {
+      display: inline-block;
+      width: 100px;
+      padding: 4px 0px;
+      border: solid #CCC 1px;
+      background-color: #FFF;
+      border-bottom-width: 2px;
+      border-radius: 3px;
+      color: #666;
+      transition: border-bottom-color 0.2s ease-in-out; }
+      body > .rir-overlay > div.rir-export-window .rir-export-buttons a:hover {
+        border-bottom-color: #999; }
+    body > .rir-overlay > div.rir-export-window .rir-export-buttons a + a {
+      margin-left: 5px; }
+    body > .rir-overlay > div.rir-export-window .rir-export-buttons a[disabled] {
+      cursor: not-allowed;
+      opacity: 0.6; }
+
+div.footer-parent {
+  display: none; }
+
+.rir-content:empty:before {
+  content: 'Reddit Inbox Revamp is initializing'; }
+
+.rir-loading-icon {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 100%;
+  border-top: solid #FFF 2px;
+  border-left: solid rgba(255, 255, 255, 0.85) 2px;
+  border-bottom: solid rgba(255, 255, 255, 0.7) 1px;
+  border-right: solid transparent 2px;
+  animation: spin 1.5s infinite linear;
+  vertical-align: middle;
+  margin-right: 10px; }
+
+.rir-icon-cog {
+  background-image: url("chrome-extension://__MSG_@@extension_id__/images/icons.png");
+  background-position: -112px 0px;
+  width: 19px;
+  height: 19px;
+  background-repeat: no-repeat;
+  display: inline-block; }
+
+body.res-nightmode .rir-content input[type="checkbox"] + label:before, body.res-nightmode .rir-checkbox input[type="checkbox"] + label:before {
+  border-bottom-color: #FFF !important;
+  border-left-color: #FFF !important; }
+body.res-nightmode .rir-top-panel {
+  background-color: #111 !important;
+  border-bottom: solid #555 1px !important; }
+  body.res-nightmode .rir-top-panel .rir-search-panel input {
+    background-color: #333;
+    color: #EEE;
+    border-color: #666; }
+  body.res-nightmode .rir-top-panel .rir-search-panel buttton {
+    background: -webkit-linear-gradient(top, #376ebc, #3568ab); }
+  body.res-nightmode .rir-top-panel .rir-buttons-panel button {
+    background-color: #333 !important;
+    color: #CCC !important;
+    border-color: #555 !important; }
+    body.res-nightmode .rir-top-panel .rir-buttons-panel button:hover {
+      border-bottom-color: #369 !important; }
+  body.res-nightmode .rir-top-panel .rir-buttons-panel .rir-config-button .rir-icon-cog {
+    background-position-y: -20px !important;
+    opacity: 0.85; }
+body.res-nightmode .rir-left-panel > a {
+  color: #CCC !important; }
+  body.res-nightmode .rir-left-panel > a:hover {
+    color: #FFF !important;
+    background-color: #000 !important; }
+body.res-nightmode .rir-left-panel .rir-contacts .rir-contact:hover {
+  background-color: #000 !important; }
+body.res-nightmode .rir-left-panel .rir-contacts .rir-contact a.rir-contact-name {
+  color: #DDD !important; }
+body.res-nightmode .rir-main-panel .rir-message-row {
+  background-color: #222 !important;
+  border-bottom-color: #666 !important; }
+  body.res-nightmode .rir-main-panel .rir-message-row .rir-datetime {
+    color: #CCC !important; }
+  body.res-nightmode .rir-main-panel .rir-message-row .rir-correspondent {
+    color: #CCC !important; }
+  body.res-nightmode .rir-main-panel .rir-message-row.rir-unread {
+    background-color: #444 !important; }
+body.res-nightmode .rir-main-panel .rir-conversation h2.rir-conversation-title {
+  color: #EEE !important; }
+body.res-nightmode .rir-main-panel .rir-conversation > .rir-private-messages {
+  border-top-color: #666 !important; }
+  body.res-nightmode .rir-main-panel .rir-conversation > .rir-private-messages .rir-private-message {
+    border-bottom-color: #666 !important; }
+    body.res-nightmode .rir-main-panel .rir-conversation > .rir-private-messages .rir-private-message .rir-pm-header {
+      background-color: #2C2C2C !important;
+      border-left-color: #666 !important;
+      border-right-color: #666 !important;
+      border-bottom-color: #666 !important; }
+      body.res-nightmode .rir-main-panel .rir-conversation > .rir-private-messages .rir-private-message .rir-pm-header h4 {
+        color: #EEE !important; }
+    body.res-nightmode .rir-main-panel .rir-conversation > .rir-private-messages .rir-private-message.rir-collapsed {
+      border-bottom: solid #6F6F6F 1px !important; }
+      body.res-nightmode .rir-main-panel .rir-conversation > .rir-private-messages .rir-private-message.rir-collapsed .rir-pm-header {
+        background-color: #4C4C4C !important;
+        border-bottom: solid #6F6F6F 1px !important;
+        border-left: solid #6F6F6F 1px !important;
+        border-right: solid #6F6F6F 1px !important; }
+    body.res-nightmode .rir-main-panel .rir-conversation > .rir-private-messages .rir-private-message .rir-pm-body .md {
+      color: #EEE !important; }
+body.res-nightmode .rir-main-panel .rir-conversation .rir-conversation-response textarea {
+  background-color: #111;
+  border-color: #444;
+  color: #EEE; }
+body.res-nightmode .rir-main-panel .rir-conversation .rir-conversation-response .rir-conversation-reply-btn {
+  background: none !important;
+  background-color: #333 !important;
+  color: #CCC !important;
+  border-color: #555 !important;
+  transition: all 0.2s ease-in-out; }
+  body.res-nightmode .rir-main-panel .rir-conversation .rir-conversation-response .rir-conversation-reply-btn:hover {
+    border-color: #666 !important;
+    color: #EEE !important;
+    background-color: #444; }
+body.res-nightmode .rir-main-panel .rir-conversation .rir-conversation-response .rir-conversation-preview {
+  color: #EEE; }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+/*# sourceMappingURL=ui.css.map */

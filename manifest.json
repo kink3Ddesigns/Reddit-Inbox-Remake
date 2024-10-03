@@ -1,0 +1,31 @@
+{
+   "background": {
+      "page": "js/background/bg.html"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "css/notification_icons.css" ],
+      "js": [ "js/global/extension-scanner.js", "js/content-all/notification_icons.js" ],
+      "matches": [ "http://*.reddit.com/*", "https://*.reddit.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "all_frames": true,
+      "css": [ "css/ui.css", "css/popups.css", "css/alerts.css" ],
+      "js": [ "js/content-inbox/jquery.min.js", "js/content-inbox/snuownd.js", "js/global/constants.js", "js/global/command-events.js", "js/global/extension-scanner.js", "js/content-inbox/global.js", "js/content-inbox/alerts.js", "js/content-inbox/config.js", "js/content-inbox/generic.js", "js/content-inbox/commenttools.js", "js/content-inbox/inbox.js", "js/content-inbox/dbhelper.js", "js/legacy/idb.js" ],
+      "matches": [ "http://*.reddit.com/message/rir_*", "https://*.reddit.com/message/rir_*" ],
+      "run_at": "document_start"
+   } ],
+   "description": "Revamps the reddit inbox",
+   "icons": {
+      "128": "Icons/128.png",
+      "16": "Icons/16.png",
+      "48": "Icons/48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoOUjetnHewFXOLMb+FhOqR4rnmwwgoHok16Ls4HgJsc3Qm8btylxTJ4O9ikS7Y4HliWIKp8pJndhzGQz5xOiu/jdhrIQzAIxShk+dNLIpP3CWWBUk1WYDan8s6do9EIZwhDtvSTpIqR0m46d92QW01zGNz7EDJuBLlRY8R8oVYlyU39v2ct/RlXW/a7Rx5gx13IryvcZ8UYGbyv81CA2GjxNsUO9cBa3ui4ai337581FKBE6aLzb09tdRpZwxqMK2S46oo7DOvIgZhr4g8l/KChI3VZofR8lFETAejtCdnKfIYsqc2HiEmmr+GXotQEE8ItX2ulU8S+Xf0dBCNIBzwIDAQAB",
+   "manifest_version": 2,
+   "name": "Reddit Inbox Revamp",
+   "permissions": [ "cookies", "http://*.reddit.com/*", "https://*.reddit.com/*" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.0",
+   "web_accessible_resources": [ "js/jquery.min.map", "template/*", "images/*", "Icons/*", "manifest.json" ]
+}
