@@ -21,13 +21,15 @@ var rir_default_cfg = {
 };
 var rir_user_cfg = {};
 
-if(typeof localStorage['RIR_USER_CONFIG'] !== "undefined") {
-    rir_user_cfg = JSON.parse(localStorage['RIR_USER_CONFIG']);
-    console.log("Config loaded from localstorage");
-}
-else {
-    console.log("No config found in localstorage");
-}
+// Load configuration from chrome.storage.local
+chrome.storage.local.get('RIR_USER_CONFIG', function(result) {
+    if (result.RIR_USER_CONFIG) {
+        rir_user_cfg = JSON.parse(result.RIR_USER_CONFIG);
+        console.log("Config loaded from chrome.storage.local");
+    } else {
+        console.log("No config found in chrome.storage.local");
+    }
+});
 
 rir.cfg_import = function(cfg) {
     if(typeof cfg.pmInboxInitialized === "object" && cfg.pmInboxInitialized instanceof Array) {
@@ -36,7 +38,7 @@ rir.cfg_import = function(cfg) {
     if(typeof cfg.replyInboxInitialized === "object" && cfg.replyInboxInitialized instanceof Array) {
         cfg.replyInboxInitialized = (cfg.replyInboxInitialized.indexOf(this.username) >= 0);
     }
-    
+
     rir_user_cfg[this.username] = cfg;
     rir_cfg_save();
 };
@@ -51,12 +53,12 @@ rir.cfg_user_get = function(prop, username){
     if(typeof rir_user_cfg[username] === "undefined") {
         rir_user_cfg[username] = rir_default_cfg;
     }
-    
+
     var cfg = rir_user_cfg[username];
     for(var attr in rir_default_cfg){
         if(typeof cfg[attr] === "undefined") cfg[attr] = rir_default_cfg[attr];
     }
-    
+
     if(typeof prop === 'undefined') {
         return cfg;
     }
@@ -101,6 +103,9 @@ var rir_cfg_saved = {
     }
 };
 
+// Save configuration to chrome.storage.local
 rir_cfg_save = function(){
-    localStorage['RIR_USER_CONFIG'] = JSON.stringify(rir_user_cfg);
+    chrome.storage.local.set({ 'RIR_USER_CONFIG': JSON.stringify(rir_user_cfg) }, function() {
+        console.log("Config saved to chrome.storage.local");
+    });
 };

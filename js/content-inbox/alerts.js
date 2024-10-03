@@ -1,7 +1,7 @@
 rir.templates.add({
-    alert_alert: chrome.extension.getURL('template/alert_alert.html'),
-    alert_html: chrome.extension.getURL('template/alert_html.html'),
-    alert_confirm: chrome.extension.getURL('template/alert_confirm.html')
+    alert_alert: chrome.runtime.getURL('template/alert_alert.html'),
+    alert_html: chrome.runtime.getURL('template/alert_html.html'),
+    alert_confirm: chrome.runtime.getURL('template/alert_confirm.html')
 });
 
 var testI = 0;

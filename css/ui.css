@@ -743,4 +743,8 @@ body.res-nightmode .rir-main-panel .rir-conversation .rir-conversation-response 
   100% {
     transform: rotate(360deg); } }
 
+.bottom-branding {
+  text-align: right;
+}
+
 /*# sourceMappingURL=ui.css.map */
