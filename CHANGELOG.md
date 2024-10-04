@@ -20,3 +20,9 @@ Completed migration to manifest v3.
 - [feat] Basic Kink3D branding
 - [feat] Updated `config.html` by changing about page to cite the new name & author
 - [feat] README
+
+# Version 2.1.2
+
+- [feat] Name "Reddit Inbox Remake"
+- [feat] Add in all requested "About" content
+- [feat] Add in developer issue requests

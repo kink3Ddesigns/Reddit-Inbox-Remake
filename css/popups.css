@@ -138,3 +138,7 @@ body.rir-modal-open {
         color: #FFF !important; }
 
 /*# sourceMappingURL=popups.css.map */
+
+.rir-config-content[data-tab-content="about"] p {
+  padding-bottom: 12px;
+}
