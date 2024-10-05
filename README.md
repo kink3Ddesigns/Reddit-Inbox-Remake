@@ -1,4 +1,4 @@
-# RetroBox
+# Retro Inbox Remake
 
 A better asynchronous message box for Reddit.
 
