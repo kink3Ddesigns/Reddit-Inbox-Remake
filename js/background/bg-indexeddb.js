@@ -175,6 +175,8 @@
             return dbInstances[this.username].add(store_name, obj);
         },
         addAll: function(store_name, arr){
+            if (arr.length === 0) return;
+
             var callback = this.callback;
             var _this = this;
             var index = 0;

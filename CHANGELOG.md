@@ -26,3 +26,9 @@ Completed migration to manifest v3.
 - [feat] Name "Reddit Inbox Remake"
 - [feat] Add in all requested "About" content
 - [feat] Add in developer issue requests
+
+# Version 2.1.3
+
+- [fix] Fix issue where changing accounts led to inability to load the inbox
+  - Appears to have been something internal to Reddit. When we logged in & out, reddit would add a `cache_bust` query param. When
+    we add this ourselves to the reddit login, we never run into our own login problem. Which is strange? But the bug is fixed.

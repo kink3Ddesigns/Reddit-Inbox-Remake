@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Reddit Inbox Remake",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Bringing inbox efficiency to the old.reddit inbox experience. Fork of Reddit Inbox Revamp",
   "icons": {
     "16": "Icons/16.png",

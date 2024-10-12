@@ -56,7 +56,7 @@
 
             var new_pm = document.createElement('a');
             new_pm.classList.add('rir-privatemessages');
-            new_pm.setAttribute('href', '/message/rir_inbox');
+            new_pm.setAttribute('href', '/message/rir_inbox?cache_bust=' + new Date().getTime());
             var pm_li = document.createElement('li');
             pm_li.appendChild(new_pm);
 
@@ -117,7 +117,7 @@
 
             var new_pm = document.createElement('a');
             new_pm.classList.add('rir-privatemessages');
-            new_pm.setAttribute('href', '/message/rir_inbox');
+            new_pm.setAttribute('href', '/message/rir_inbox?cache_bust=' + new Date().getTime());
             var new_pm_count = HelpFuncs.createMessageCount('/message/rir_inbox');
 
             var new_reply = document.createElement('a');
@@ -256,7 +256,7 @@
         
         var new_pm = document.createElement('a');
         new_pm.classList.add('rir-privatemessages');
-        new_pm.setAttribute('href', '/message/rir_inbox');
+        new_pm.setAttribute('href', '/message/rir_inbox?cache_bust=' + new Date().getTime());
         var new_pm_count = HelpFuncs.createMessageCount('/message/rir_inbox');
 
         var new_reply = document.createElement('a');
