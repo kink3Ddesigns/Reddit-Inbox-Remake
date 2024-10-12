@@ -4,7 +4,7 @@ A better asynchronous message box for Reddit, featuring:
 
 - Gmail-style list of messages with a preview of the message content
 - Threaded conversation view
-- Search by subject, sender, or message context
+- Search by subject, sender, or message content
 - Save messages to return to them later
 - Frequent contacts
 
