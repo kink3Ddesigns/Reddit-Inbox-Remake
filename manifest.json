@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Reddit Inbox Remake",
-  "version": "2.1.3",
+  "version": "2.1.4",
   "description": "Bringing inbox efficiency to the old.reddit inbox experience. Fork of Reddit Inbox Revamp",
   "icons": {
     "16": "Icons/16.png",
@@ -13,14 +13,14 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://old.reddit.com/*", "https://old.reddit.com/*"],
+      "matches": ["http://*.reddit.com/*", "https://*.reddit.com/*"],
       "js": ["js/global/extension-scanner.js", "js/content-all/notification_icons.js"],
       "css": ["css/notification_icons.css"],
       "all_frames": true,
       "run_at": "document_start"
     },
     {
-      "matches": ["http://old.reddit.com/message/rir_*", "https://old.reddit.com/message/rir_*"],
+      "matches": ["http://*.reddit.com/message/rir_*", "https://*.reddit.com/message/rir_*"],
       "js": [
         "js/content-inbox/jquery.min.js",
         "js/content-inbox/snuownd.js",

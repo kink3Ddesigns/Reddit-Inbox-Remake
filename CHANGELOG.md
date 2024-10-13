@@ -32,3 +32,7 @@ Completed migration to manifest v3.
 - [fix] Fix issue where changing accounts led to inability to load the inbox
   - Appears to have been something internal to Reddit. When we logged in & out, reddit would add a `cache_bust` query param. When
     we add this ourselves to the reddit login, we never run into our own login problem. Which is strange? But the bug is fixed.
+
+# Version 2.1.4
+
+- [fix] Return this to working on old reddit
