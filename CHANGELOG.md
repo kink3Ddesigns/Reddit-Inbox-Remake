@@ -45,4 +45,4 @@ Completed migration to manifest v3.
 
 # Version 2.1.6 
 
--[fix] Check if `ori_mail` is null before attempting to render items around it
+- [fix] Check if `ori_mail` is null before attempting to render items around it
