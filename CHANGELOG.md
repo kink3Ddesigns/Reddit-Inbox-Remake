@@ -41,5 +41,5 @@ Completed migration to manifest v3.
 
 - [fix] Correct config.html language & branding
 - [fix] Fix branding message placed bellow the lowest element, not at end of either conversation or at inbox list
-- - [chore] Update license for public release
+- [chore] Update license for public release
 
