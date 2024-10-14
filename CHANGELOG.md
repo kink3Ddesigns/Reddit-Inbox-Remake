@@ -35,4 +35,10 @@ Completed migration to manifest v3.
 
 # Version 2.1.4
 
-- [fix] Return this to working on old reddit
+- [fix] Return this to working on reddit.com (not exclusively old.reddit.com)
+
+# Version 2.1.5
+
+- [fix] Correct config.html language & branding
+- [fix] Fix branding message placed bellow lowest element, not at end of either conversation or at inbox list
+

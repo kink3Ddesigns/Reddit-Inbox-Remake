@@ -14,7 +14,8 @@
         export_all_to_mysql: chrome.runtime.getURL('template/export_all_to_mysql.html'),
         export_all_to_html: chrome.runtime.getURL('template/export_all_to_html.html'),
         export_conversation_window: chrome.runtime.getURL('template/export_conversation_window.html'),
-        export_conversation_to_html: chrome.runtime.getURL('template/export_conversation_to_html.html')
+        export_conversation_to_html: chrome.runtime.getURL('template/export_conversation_to_html.html'),
+        made_with_love: chrome.runtime.getURL('template/made_with_love.html')
     });
 
     rir.init.funcs.push(rir.functions.DOMReady);
@@ -584,6 +585,9 @@
                     break;
                 }
             }
+
+            const brandingHtml = rir.templates.made_with_love;
+            $(brandingHtml).appendTo(rir.$e.mainPanel);
         },
         addContactsToContactList: function(contacts){
             for(var i = 0; i < contacts.length; i++) {

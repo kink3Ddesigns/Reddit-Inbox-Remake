@@ -747,4 +747,8 @@ body.res-nightmode .rir-main-panel .rir-conversation .rir-conversation-response 
   text-align: right;
 }
 
+.rir-conversation .bottom-branding {
+  padding-right: 11px;
+}
+
 /*# sourceMappingURL=ui.css.map */
