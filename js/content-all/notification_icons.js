@@ -1,5 +1,5 @@
 (function(){
-    
+
     function referenceElement(ele){
         return {
             insertAfter: function(insert){
@@ -8,7 +8,7 @@
             }
         };
     }
-    
+
     var res = {
         compatibility: function(){
             res.monitorRESMailcount();
@@ -35,7 +35,7 @@
         },
         monitorRESMailcount: function(){
             var lastMailcount = res.getMailCount();
-            
+
             function neverEndingPageload(){
                 var mailCount = res.getMailCount();
                 if(mailCount === 0) {
@@ -46,7 +46,7 @@
                     HelpFuncs.checkMail();
                 }
             }
-            
+
             window.addEventListener("neverEndingLoad", neverEndingPageload);
         },
         initHtml: function(){
@@ -65,7 +65,7 @@
             new_reply.setAttribute('href', '/message/inbox/');
             var reply_li = document.createElement('li');
             reply_li.appendChild(new_reply);
-            
+
 
             referenceElement(parent_li)
                 .insertAfter(pm_li)
@@ -73,13 +73,13 @@
 
             elements.defaultInboxIcons.push(new_reply);
             elements.rirInboxIcons.push(new_pm);
-            
+
             if(initialMessageCount > 0) {
                 HelpFuncs.checkMail();
             }
         }
     };
-    
+
     var toolbox = {
         compatibility: function(){
             toolbox.monitorToolboxMailcount();
@@ -125,23 +125,27 @@
             new_reply.setAttribute('href', '/message/inbox/');
             var new_reply_count = HelpFuncs.createMessageCount('/message/inbox');
 
-            referenceElement(ori_mail.previousSibling)
-                .insertAfter(new_pm)
-                .insertAfter(new_pm_count)
-                .insertAfter(new_reply)
-                .insertAfter(new_reply_count);
+            if (ori_mail?.previousSibling) {
+                referenceElement(ori_mail.previousSibling)
+                    .insertAfter(new_pm)
+                    .insertAfter(new_pm_count)
+                    .insertAfter(new_reply)
+                    .insertAfter(new_reply_count);
+            } else {
+                console.warn('Could not find the original mail element');
+            }
 
             elements.defaultInboxIcons.push(new_reply);
             elements.defaultInboxCounts.push(new_reply_count);
             elements.rirInboxIcons.push(new_pm);
             elements.rirInboxCounts.push(new_pm_count);
-            
+
             if(initialMessageCount > 0) {
                 HelpFuncs.checkMail();
             }
         }
     };
-    
+
     var HelpFuncs = {
         createSeparator: function(){
             var ele = document.createElement('span');
@@ -200,7 +204,7 @@
                     elements.rirInboxCounts[i].innerText = '';
                 }
             }
-            
+
             if(count.reply > 0){
                 for(var i = 0; i < elements.defaultInboxIcons.length; i++) {
                     elements.defaultInboxIcons[i].classList.add('rir-havemail');
@@ -227,7 +231,7 @@
                 }
                 return;
             }
-            
+
             data.lastMailCheck = curTime;
             HelpFuncs.getUnreadMessagesJson(function(json){
                 var count = HelpFuncs.getTypedMessageCount(json);
@@ -235,14 +239,14 @@
             });
         }
     };
-    
+
     var elements = {
         defaultInboxIcons: [],
         defaultInboxCounts: [],
         rirInboxIcons: [],
         rirInboxCounts: [],
     };
-    
+
     var data = {
         lastMailCheck: 0,
         lastJsonCache: null
@@ -250,10 +254,10 @@
 
     onExtLoaded('res', res.compatibility);
     onExtLoaded('mod-toolbox', toolbox.compatibility);
-    
+
     function initDefaultDOMChanges(){
         var ori_mail = document.querySelector('#mail');
-        
+
         var new_pm = document.createElement('a');
         new_pm.classList.add('rir-privatemessages');
         new_pm.setAttribute('href', '/message/rir_inbox?cache_bust=' + new Date().getTime());
@@ -263,29 +267,33 @@
         new_reply.classList.add('rir-mail');
         new_reply.setAttribute('href', '/message/inbox/');
         var new_reply_count = HelpFuncs.createMessageCount('/message/inbox');
-        
-        referenceElement(ori_mail.previousSibling)
-            .insertAfter(new_pm)
-            .insertAfter(new_pm_count)
-            .insertAfter(HelpFuncs.createSeparator())
-            .insertAfter(new_reply)
-            .insertAfter(new_reply_count);
-        
+
+        if (ori_mail?.previousSibling) {
+            referenceElement(ori_mail.previousSibling)
+                .insertAfter(new_pm)
+                .insertAfter(new_pm_count)
+                .insertAfter(HelpFuncs.createSeparator())
+                .insertAfter(new_reply)
+                .insertAfter(new_reply_count);
+        } else {
+            console.log('Could not find the original mail element');
+        }
+
         elements.defaultInboxIcons.push(new_reply);
         elements.defaultInboxCounts.push(new_reply_count);
         elements.rirInboxIcons.push(new_pm);
         elements.rirInboxCounts.push(new_pm_count);
     }
-    
+
     var initialMessageCount = 0;
     document.addEventListener("DOMContentLoaded", function() {
         var originalMessageCountElement = document.querySelector('#header .message-count');
         initDefaultDOMChanges();
-        
+
         if(originalMessageCountElement && originalMessageCountElement.innerText) {
             initialMessageCount = parseInt(originalMessageCountElement.innerText);
             if(initialMessageCount > 0) HelpFuncs.checkMail();
         }
     });
-    
+
 })();

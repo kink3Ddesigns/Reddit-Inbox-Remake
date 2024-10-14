@@ -43,3 +43,6 @@ Completed migration to manifest v3.
 - [fix] Fix branding message placed bellow the lowest element, not at end of either conversation or at inbox list
 - [chore] Update license for public release
 
+# Version 2.1.6 
+
+-[fix] Check if `ori_mail` is null before attempting to render items around it
