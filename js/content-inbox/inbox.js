@@ -492,6 +492,11 @@
                 }
                 rir.view.hideOverlay();
             });
+
+            // Close Config
+            $config.find('.rir-config-footer .rir-cancel-button').on('click', function(){
+                rir.view.hideOverlay();
+            });
             
             rir.$e.body.addClass('rir-modal-open');
             rir.$e.overlay.empty().append($config);
