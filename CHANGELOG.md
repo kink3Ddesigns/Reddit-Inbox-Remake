@@ -52,3 +52,7 @@ Completed migration to manifest v3.
 - [fix] Open KINK3D branding links in new tab
 - [fix] Capitalization of Inbox in Config > Administration
 - [fix] Actually do something when close is clicked - close the inbox!
+
+# Version 2.1.8
+
+- [fix] Remove unnecessary `cookies` permission
