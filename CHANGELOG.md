@@ -56,3 +56,7 @@ Completed migration to manifest v3.
 # Version 2.1.8
 
 - [fix] Remove unnecessary `cookies` permission
+
+# Version 2.1.9
+
+Bump version so chrome sees it as a new version
